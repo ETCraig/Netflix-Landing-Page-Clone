@@ -20,8 +20,31 @@ function showTime() {
     setTimeout(showTime, 1000);
 }
 
+//Add Zero
 function addZero(num) {
     return (parseInt(num, 10) < 10 ? '0' : '') + num;
 }
 
+//Set Background
+function setBgGreet() {
+    let today = new Date(),
+      hour = today.getHours();
+  
+    if (hour < 12) {
+      // Morning
+      document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
+      greeting.textContent = 'Good Morning, ';
+    } else if (hour < 18) {
+      // Afternoon
+      document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')";
+      greeting.textContent = 'Good Afternoon, ';
+    } else {
+      // Evening
+      document.body.style.backgroundImage = "url('https://i.ibb.co/924T2Wv/night.jpg')";
+      greeting.textContent = 'Good Evening, ';
+      document.body.style.color = 'white';
+    }
+  }
+
 showTime();
+setBgGreet();
